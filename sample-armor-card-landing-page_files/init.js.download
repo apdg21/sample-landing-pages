@@ -1,1 +1,0 @@
-!function(e,n){if("object"==typeof n&&n.funnel.id){var t=e.createElement("script");t.src="".concat("https://pixel.wetracked.io","/funnel/").concat(n.step.domain_name.toLowerCase(),"/").concat(n.funnel.id,"/events.js"),e.head.insertBefore(t,e.head.firstChild)}}(document,funnelish);
