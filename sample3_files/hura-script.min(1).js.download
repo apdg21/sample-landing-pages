@@ -1,0 +1,1 @@
+const jsHTB=document.createElement("script");jsHTB.src="https://cdn.jsdelivr.net/gh/huynhmaianhkiet/hura-cdn/dist/js/hura-script.min.js",document.head.appendChild(jsHTB);const cssHTB=document.createElement("link");cssHTB.rel="stylesheet",cssHTB.href="https://cdn.jsdelivr.net/gh/huynhmaianhkiet/hura-cdn/dist/css/hura-style.min.css",document.head.appendChild(cssHTB);

@@ -1,0 +1,52 @@
+(function () {
+    const triggerClassname = "smi-scroll-trigger";
+    const offscreenClassname = "smi-scroll-trigger--offscreen";
+    const offscreenDisabled = "smi-scroll-trigger--disabled";
+
+    function onIntersection(elements, observer) {
+        elements.forEach((element, index) => {
+            if (element.isIntersecting) {
+                const elementTarget = element.target;
+                if (elementTarget.classList.contains(offscreenClassname)) {
+                    elementTarget.classList.remove(offscreenClassname);
+                    elementTarget.smiAnimationDisabled = true;
+                    observer.unobserve(elementTarget);
+                }
+            } else {
+                if (element.target.smiAnimationDisabled !== true){
+                    element.target.classList.add(offscreenClassname);
+                }
+            }
+        });
+    }
+
+    function initializeScrollAnimationTrigger(rootEl = document, isDesignModeEvent = false) {
+        const animationTriggerElements = Array.from(rootEl.getElementsByClassName(triggerClassname));
+        if (animationTriggerElements.length === 0) return;
+
+        if (isDesignModeEvent) {
+            animationTriggerElements.forEach((element) => {
+                element.classList.add("smi-scroll-trigger--design-mode");
+            });
+            return;
+        }
+
+        const observer = new IntersectionObserver(onIntersection, {
+            rootMargin: "0px 0px -50px 0px",
+        });
+
+        animationTriggerElements.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    window.addEventListener('load', ()=> {
+        initializeScrollAnimationTrigger();
+    });
+
+    if (Shopify.designMode) {
+        document.addEventListener("shopify:section:load", (event) => initializeScrollAnimationTrigger(event.target, true));
+        document.addEventListener("shopify:section:reorder", () => initializeScrollAnimationTrigger(document, true));
+    }
+
+})();

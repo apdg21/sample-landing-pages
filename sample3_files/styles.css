@@ -1,0 +1,97 @@
+/** Shopify CDN: Minification failed
+
+Line 25:8 Expected identifier but found whitespace
+Line 25:10 Unexpected "{"
+Line 25:17 Expected ":"
+Line 26:12 Expected identifier but found whitespace
+Line 26:14 Unexpected "{"
+Line 26:21 Expected ":"
+Line 26:46 Expected ":"
+Line 27:14 Expected identifier but found whitespace
+Line 27:16 Unexpected "{"
+Line 27:23 Expected ":"
+... and 26 more hidden warnings
+
+**/
+
+
+/* CSS from section stylesheet tags */
+custom-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+/* Title Styling */
+.title {
+  color: {{ block.settings.title_color }};
+  font-size: {{ block.settings.title_size }}px;
+  font-weight: {{ block.settings.title_weight }};
+  font-style: {{ block.settings.title_style }};
+}
+
+/* Text Styling */
+.text {
+  color: {{ block.settings.text_color }};
+  font-size: {{ block.settings.text_size }}px;
+  text-align: {{ block.settings.text_align }};
+  font-weight: {{ block.settings.text_weight }};
+  list-style-type: {{ block.settings.text_list_style }};
+  font-style: {{ block.settings.text_style }};
+}
+
+/* Image Styling */
+.image {
+  width: {{ block.settings.image_width }}%;
+}
+.column-1 {
+  position: sticky;
+  top: 0;
+}
+
+.column-2 {
+  overflow: auto;
+}
+
+.block-image img {
+  width: 100%;
+}
+
+.block-text h3 {
+  margin: 0;
+}
+
+.block-text p {
+  margin: 0;
+}
+.two-column {
+  display: flex;
+  justify-content: center; /* Center align the columns */
+  max-width: 1200px; /* Set max width to fit within a 1200px screen */
+  margin: 0 auto; /* Center the section horizontally */
+}
+
+.column {
+  flex: 1;
+  padding: 0 15px; /* Add space between columns */
+  box-sizing: border-box; /* Include padding in the column width calculation */
+  max-width: 50%; /* Ensure columns do not exceed half of the container width */
+}
+.column-1 {
+  position: sticky;
+  top: 0;
+}
+
+.column-2 {
+  overflow: auto;
+}
+
+.block-image img {
+  width: 100%;
+}
+
+.block-text h3 {
+  margin: 0;
+}
+
+.block-text p {
+  margin: 0;
+}
